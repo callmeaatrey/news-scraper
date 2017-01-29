@@ -1,6 +1,6 @@
 {
   "name": "news-scraper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fast, lean implementation of a web scraper for gaining access to news from various news centers all around the world.",
   "main": "index.js",
   "scripts": {
