@@ -13,7 +13,7 @@ var cheerio = require('cheerio');
 var sources = ['techcrunch'];
 
 module.exports = function(source, link) {
-	if sources.indexOf(source) == -1
+	if (sources.indexOf(source)) == -1
 		return {'body': 'sorry! support not available yet for the required source'};
 
 	var scrape_map = {
