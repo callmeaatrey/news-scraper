@@ -1,0 +1,34 @@
+{
+  "name": "news-scraper",
+  "version": "0.0.1",
+  "description": "Fast, lean implementation of a web scraper for gaining access to news from various news centers all around the world.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callmeaatrey/news-scraper.git"
+  },
+  "keywords": [
+    "news",
+    "scraper",
+    "blog",
+    "posts",
+    "json",
+    "api"
+  ],
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "author": "Shikher Aatrey <shikher.a@gmail.com> (http://github.com/callmeaatrey)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/callmeaatrey/news-scraper/issues"
+  },
+  "homepage": "https://github.com/callmeaatrey/news-scraper#readme",
+  "dependencies": {
+    "cheerio": "0.22.0",
+    "request": "2.79.0"
+  }
+}
