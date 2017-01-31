@@ -11,7 +11,7 @@ Fast, lean implementation of a web scraper for gaining access to news from vario
 
     var scraper = require('news-scraper');
 
-    var post = scraper('techcrunch', 'link to a post');
+    var post = scraper('source_website', 'link to a post/ array of posts');
 
 
   Output should be `{'result': 'json object containing blog post'}`
