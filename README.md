@@ -1,6 +1,6 @@
 News Scraper
 =========
-[![npm version](https://badge.fury.io/js/news-scraper.svg)](https://badge.fury.io/js/news-scraper)
+[![NPM](https://nodei.co/npm/news-scraper.png)](https://npmjs.org/package/news-scraper)
 
 Fast, lean implementation of a web scraper for gaining access to news from various news centers all around the world.
 
