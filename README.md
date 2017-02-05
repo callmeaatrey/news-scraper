@@ -4,7 +4,7 @@ News Scraper
 
 Fast, lean implementation of a web scraper for gaining access to news from various news centers all around the world.
 
-Starting out with TechCrunch. Believe me, I am just getting started.
+Support for TechCrunch and Wired Blog Posts. More to Come!
 
 ## Installation
 
@@ -20,7 +20,14 @@ Starting out with TechCrunch. Believe me, I am just getting started.
     });
 
 
-  Format of the output should be `{'url': 'url to be scraped', 'post': 'blog post content'}`
+Format of the output should be:
+
+    `{'url': 'url to be scraped', 'post': 'blog post content'}`
+
+## Blog Tags
+
+    TechCrunch: 'techcrunch'
+    Wired: 'wired-de'
 
 ## Example
 

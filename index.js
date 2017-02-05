@@ -18,7 +18,7 @@ var headers = {
 }
 
 // ever adding sources
-var sources = ['techcrunch'];
+var sources = ['techcrunch', 'wired-de'];
 
 // primary module
 module.exports = function(source, link, callback) {
@@ -29,7 +29,8 @@ module.exports = function(source, link, callback) {
 
 	// source mapper
 	var scrape_map = {
-		"techcrunch": techcrunch
+		"techcrunch": techcrunch,
+		"wired-de": wired
 	};
 
 	var blog_json = scrape_map[source](link);
@@ -61,6 +62,41 @@ module.exports = function(source, link, callback) {
 					// here comes cheerio for handling DOM traversal
 					var $ = cheerio.load(html);
 					json_post.push({url: url, post: $('.article-entry p').text()});
+					return callback(json_post);
+				} else {
+					// handle error here
+				}
+			})
+		}
+	}
+
+	// scraper for wired posts
+	function wired(link) {
+		// for handling incoming links array
+		if (Array.isArray(link)) {
+			async.eachSeries(link, function(url, next) {
+				request({url: url, headers: headers}, function(err, res, html) {
+					if(!err) {
+						// here comes cheerio for handling DOM traversal
+						var $ = cheerio.load(html);
+						json_post.push({url: url, post: $('.article-content .body-wrapper p').text()});
+						next();
+					} else {
+						// handle error here
+					}
+				})
+			}, function() {
+				// sending result back to the client
+				return callback(json_post);
+			});
+		}
+		// for handling incoming single link
+		else {
+			request(link, function(err, res, html) {
+				if(!err) {
+					// here comes cheerio for handling DOM traversal
+					var $ = cheerio.load(html);s
+					json_post.push({url: url, post: $('.article-content .body-wrapper p').text()});
 					return callback(json_post);
 				} else {
 					// handle error here
