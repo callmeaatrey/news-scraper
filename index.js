@@ -61,7 +61,7 @@ module.exports = function(source, link, callback) {
 				if(!err) {
 					// here comes cheerio for handling DOM traversal
 					var $ = cheerio.load(html);
-					json_post.push({url: url, post: $('.article-entry p').text()});
+					json_post.push({url: link, post: $('.article-entry p').text()});
 					return callback(json_post);
 				} else {
 					// handle error here
@@ -95,8 +95,8 @@ module.exports = function(source, link, callback) {
 			request(link, function(err, res, html) {
 				if(!err) {
 					// here comes cheerio for handling DOM traversal
-					var $ = cheerio.load(html);s
-					json_post.push({url: url, post: $('.article-content .body-wrapper p').text()});
+					var $ = cheerio.load(html);
+					json_post.push({url: link, post: $('.article-content .body-wrapper p').text()});
 					return callback(json_post);
 				} else {
 					// handle error here
